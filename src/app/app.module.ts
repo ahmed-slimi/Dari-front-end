@@ -29,15 +29,29 @@ import { ModifAdComponent } from './components/modif-ad/modif-ad.component';
 import { ClaimsmanagementComponent } from './components/claimsmanagement/claimsmanagement.component';
 import { ClaimsupdateComponent } from './components/claimsupdate/claimsupdate.component';
 import { SubscriptionorderFormComponent } from './components/subscriptionorder-form/subscriptionorder-form.component';
+// @ts-ignore
 import { OffersComponent } from './components/offers/offers.component';
 import {LoginComponent} from './components/login/login.component';
+// @ts-ignore
 import {SuccessComponent} from './components/success/success.component';
 import {CancelComponent} from './components/cancel/cancel.component';
-import { AppointmentmangemtComponent } from './components/appointmentmangemt/appointmentmangemt.component';
-import { AppointmentupdateComponent } from './components/appointmentupdate/appointmentupdate.component';
-import { MyappointmentsComponent } from './components/myappointments/myappointments.component';
-import { ManagMyAppointmentComponent } from './components/manag-my-appointment/manag-my-appointment.component';
-
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import {ChartsModule} from 'ng2-charts';
+import { RessetpasswordComponent } from './components/ressetpassword/ressetpassword.component';
+import { FounitureAdComponent } from './components/founiture-ad/founiture-ad.component';
+import { AdOwnedComponent } from './components/ad-owned/ad-owned.component';
+import { SellComponent } from './components/sell/sell.component';
+import { RentComponent } from './components/rent/rent.component';
+import { GetfavoComponent } from './components/getfavo/getfavo.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { FirstchatComponent } from './components/firstchat/firstchat.component';
+import {WebsocketService} from "./services/websocket.service";
+import { DisplaySearchAdComponent } from './components/display-search-ad/display-search-ad.component';
+import {AdService} from "./services/ad.service";
+import { AdadvancSearchAdminComponent } from './components/adadvanc-search-admin/adadvanc-search-admin.component';
+import { SituationAdComponent } from './components/situation-ad/situation-ad.component';
+import { AssuranceComponent } from './components/assurance/assurance.component';
+import { SurveillanceDeMaisonComponent } from './components/surveillance-de-maison/surveillance-de-maison.component';
 
 
 
@@ -70,12 +84,22 @@ import { ManagMyAppointmentComponent } from './components/manag-my-appointment/m
     SuccessComponent,
     HeaderComponent,
 
-    OffersComponent,
-    AppointmentmangemtComponent,
-    AppointmentupdateComponent,
-    MyappointmentsComponent,
-    ManagMyAppointmentComponent
-     ],
+      OffersComponent,
+        StatisticsComponent,
+        RessetpasswordComponent,
+        FounitureAdComponent,
+        AdOwnedComponent,
+        SellComponent,
+        RentComponent,
+        GetfavoComponent,
+        ChatComponent,
+        FirstchatComponent,
+        DisplaySearchAdComponent,
+        AdadvancSearchAdminComponent,
+        SituationAdComponent,
+        AssuranceComponent,
+        SurveillanceDeMaisonComponent,
+       ],
 
 
   imports: [
@@ -85,9 +109,11 @@ import { ManagMyAppointmentComponent } from './components/manag-my-appointment/m
     HttpClientModule,
     FormsModule,
     MaterialModule,
-
+    ChartsModule,
+ //   NbThemeModule.forRoot({name: 'default'}),
+   // NbThemeModule.forRoot({ name: 'default' })
   ],
-  providers: [httpInterceptorProviders, VerifAuthService],
+  providers: [httpInterceptorProviders, VerifAuthService, WebsocketService,AdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
