@@ -33,6 +33,10 @@ import { OffersComponent } from './components/offers/offers.component';
 import {LoginComponent} from './components/login/login.component';
 import {SuccessComponent} from './components/success/success.component';
 import {CancelComponent} from './components/cancel/cancel.component';
+import { AppointmentmangemtComponent } from './components/appointmentmangemt/appointmentmangemt.component';
+import { AppointmentupdateComponent } from './components/appointmentupdate/appointmentupdate.component';
+import { MyappointmentsComponent } from './components/myappointments/myappointments.component';
+import { ManagMyAppointmentComponent } from './components/manag-my-appointment/manag-my-appointment.component';
 
 
 
@@ -66,7 +70,12 @@ import {CancelComponent} from './components/cancel/cancel.component';
     SuccessComponent,
     HeaderComponent,
 
-      OffersComponent,  ],
+    OffersComponent,
+    AppointmentmangemtComponent,
+    AppointmentupdateComponent,
+    MyappointmentsComponent,
+    ManagMyAppointmentComponent
+     ],
 
 
   imports: [

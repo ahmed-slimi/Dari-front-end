@@ -1,0 +1,93 @@
+<div style="width: 100%; background-color: #4e555b;">
+  <mat-form-field color="accent">
+    <input  matInput (keyup)="applyFilter($event)" placeholder="Filter" #input>
+  </mat-form-field>
+ &nbsp; <a class="btn btn-primary" href="managemyappointment" role="button">MyAppointments</a>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+  <!-- Position Column -->
+
+  <ng-container matColumnDef="appointmentId">
+    <th mat-header-cell *matHeaderCellDef> appointmentId </th>
+    <td mat-cell *matCellDef="let element"> {{element.appointmentId}} </td>
+  </ng-container>>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="dateAppdeb">
+    <th mat-header-cell *matHeaderCellDef> DateAppdeb</th>
+    <td mat-cell *matCellDef="let element"> {{element.dateAppdeb}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="dateAppFin">
+    <th mat-header-cell *matHeaderCellDef>  DateAppFin </th>
+    <td mat-cell *matCellDef="let element"> {{element.dateAppFin}} </td>
+  </ng-container>
+
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="placeApp">
+    <th mat-header-cell *matHeaderCellDef> PlaceApp </th>
+    <td mat-cell *matCellDef="let element"> {{element.placeApp}} </td>
+  </ng-container>
+
+
+
+  <ng-container matColumnDef="nameApp">
+    <th mat-header-cell *matHeaderCellDef> NameApp </th>
+    <td mat-cell *matCellDef="let element"> {{element.nameApp}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="accepted">
+    <th mat-header-cell *matHeaderCellDef> Accepted </th>
+    <td mat-cell *matCellDef="let element "> {{element.accepted}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="refused">
+    <th mat-header-cell *matHeaderCellDef> refused </th>
+    <td mat-cell *matCellDef="let element "> {{element.refused}} </td>
+  </ng-container>
+ <!-- <button md-icon-button mdTooltip="Check me">
+    <md-icon>check</md-icon>
+  </button>-->
+  <ng-container matColumnDef="Check me">
+    <th mat-header-cell *matHeaderCellDef > Accept </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="Acceptapp(element.appointmentId)"
+              [disabled]='element.accepted'>
+        <div *ngIf="element.accepted == true">
+        <mat-icon style="color:#d10024 !important;">check</mat-icon>
+        </div>
+        <div *ngIf="element.accepted == false">
+          <mat-icon style="color:#1a8d12 !important;">check</mat-icon>
+        </div>
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="clear">
+    <th mat-header-cell *matHeaderCellDef > Refuse </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="refuseapp(element.appointmentId)"
+              [disabled]='element.refused'>
+        <div *ngIf="element.refused == true">
+          <mat-icon style="color:#d10024 !important;">clear</mat-icon>
+        </div>
+        <div *ngIf="element.refused == false">
+          <mat-icon style="color:#1a8d12 !important;">clear</mat-icon>
+        </div>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!--<div style="width: 100%; background-color: #4e555b;">
+  <br>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="#" role="button">MyAppointments</a>
+</div>-->
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
