@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: LoginInfo = new LoginInfo('', '' );
   hide = true;
-  user: User = new User();
+ user: User = new User();
 
 
   constructor( private authService: AuthService,private dialog: MatDialog, private us: UserService, private matdialogref: MatDialogRef<LoginComponent>, private tokenStorage: TokenStorageService, private router: Router, private verifauth: VerifAuthService) {
@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
     this.us.iduser = 0 ;
     this.user = new User();
   }
-  resetpass(f: NgForm){
+resetpass(f: NgForm){
     this.loginInfo.username = f.value.username;
     this.loginInfo.password = '';
     this.us.resetpassword(this.loginInfo ).subscribe(data => { console.log(data); },
@@ -90,7 +90,6 @@ export class LoginComponent implements OnInit {
     this.matdialogref.close();
     this.us.iduser = 0 ;
     this.user = new User();
-<<<<<<< Updated upstream
 }
   onCreate1() {
     const dialogConfig = new MatDialogConfig();
@@ -103,8 +102,5 @@ export class LoginComponent implements OnInit {
 
   }
 
-=======
-  }
->>>>>>> Stashed changes
 }
 

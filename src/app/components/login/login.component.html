@@ -1,36 +1,38 @@
-/*
 <div *ngIf="isLoggedIn; else loggedOut">
   Logged in as {{roles}}.
 </div>
 <ng-template #loggedOut>
 <form  #f="ngForm"  (ngSubmit)="onSubmit()"  novalidate>
-<mat-grid-list cols="1" rowHeight="400px">
-<mat-grid-tile>
-<div class="example-container">
-  <mat-form-field appearance="fill" class="width-50 col-25" >
-  <mat-label class="mat"  style="color: #a71d2a">Username</mat-label>
-  <input matInput  name="username" size="150" [(ngModel)]="form.username" ngModel #username="ngModel" required>
+  <mat-grid-list cols="1" rowHeight="400px">
+    <mat-grid-tile>
+      <div class="example-container">
+        <mat-form-field appearance="fill" class="width-50 col-25" >
+          <mat-label class="mat"  style="color: #a71d2a">Username</mat-label>
+          <input matInput  name="username" size="150" [(ngModel)]="form.username" ngModel #username="ngModel" required>
 
-<button mat-icon-button matSuffix >
-<mat-icon> person_pin</mat-icon>
-</button>
-</mat-form-field>
+          <button mat-icon-button matSuffix >
+            <mat-icon> person_pin</mat-icon>
+          </button>
+        </mat-form-field>
 
 
 <br>
 
-<mat-form-field appearance="fill" class=" width-50 col-20" >
-  <mat-label class="mat" style="color: #a71d2a" >Enter password</mat-label>
-<input matInput [type]="hide ? 'password' : 'text'" name="password"  [(ngModel)]="form.password" ngModel #password="ngModel"required>
-<button mat-icon-button  matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-</button>
-</mat-form-field>
-<br>
-<a
+        <mat-form-field appearance="fill" class=" width-50 col-20" >
+          <mat-label class="mat" style="color: #a71d2a" >Enter password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" name="password"  [(ngModel)]="form.password" ngModel #password="ngModel"required>
+          <button mat-icon-button  matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <br>
+        <a
 
 
-<<<<<<< Updated upstream
+         style="color: #15161D" (click)="resetpass(f)" routerLink="reset">
+          Forgot Password?
+        </a>
+
         <br>
         <button mat-button class="b"   [disabled]="f.invalid" style="background-color:#424242 "  >Login</button>
         <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
@@ -43,22 +45,38 @@
     </mat-grid-tile>
   </mat-grid-list>
 </form></ng-template>
-=======
-  style="color: #15161D" (click)="resetpass(f)" routerLink="reset">
-  Forgot Password?
-  </a>
->>>>>>> Stashed changes
 
-  <br>
-  <button mat-button class="b"   [disabled]="f.invalid" style="background-color:#424242 "  >Login</button>
-<div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
-  Login failed: {{errorMessage}}
-</div>
-<p>If you don't have an account?</p>
-<a routerLink="signup" class="btn btn-success" style="margin-left: 70px; width: 120px">Sign Up</a>
-<button type="button" type="reset" mat-stroked-button class="ml-3" style="background-color: #b0bec5" (click)="onclose()" >cancel</button>
+<!--
+<ng-template #loggedOut>
+  <div class="row col-sm-6" style="max-width:350px;">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="form.username" #username="ngModel"
+               required />
+        <div *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
+               required minlength="4" />
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 4 characters</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" >Login</button>
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">
+          Login failed: {{errorMessage}}
+        </div>
+      </div>
+    </form>
+    <hr />
+    <p>Don't have an account?</p>
+    <a routerLink="signup" class="btn btn-success">Sign Up</a>
   </div>
-  </mat-grid-tile>
-  </mat-grid-list>
-  </form></ng-template>
-*/
+</ng-template>
+-->

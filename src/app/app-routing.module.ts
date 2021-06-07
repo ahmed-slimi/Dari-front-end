@@ -21,10 +21,6 @@ import {OffersComponent} from './components/offers/offers.component';
 // @ts-ignore
 import {SuccessComponent} from './components/success/success.component';
 import {CancelComponent} from './components/cancel/cancel.component';
-
-import {AppointmentmangemtComponent} from './components/appointmentmangemt/appointmentmangemt.component';
-import {MyappointmentsComponent} from "./components/myappointments/myappointments.component";
-import {ManagMyAppointmentComponent} from "./components/manag-my-appointment/manag-my-appointment.component";
 // @ts-ignore
 import {UsermanagementguardGuard} from './routeGuard/usermanagementguard.guard';
 import {StatisticsComponent} from './components/statistics/statistics.component';
@@ -38,14 +34,10 @@ import {ChatComponent} from "./components/chat/chat.component";
 import {DisplaySearchAdComponent} from "./components/display-search-ad/display-search-ad.component";
 import {AssuranceComponent} from './components/assurance/assurance.component';
 import {SurveillanceDeMaisonComponent} from './components/surveillance-de-maison/surveillance-de-maison.component';
-<<<<<<< Updated upstream
 import {AddFournitureAdComponent} from './components/add-fourniture-ad/add-fourniture-ad.component';
 import {FournitureAdOwnedComponent} from './components/fourniture-ad-owned/fourniture-ad-owned.component';
 import {FournitureStatisticsComponent} from './components/fourniture-statistics/fourniture-statistics.component';
 import { FournitureAdCheckoutComponent } from './components/fourniture-ad-checkout/fourniture-ad-checkout.component';
-=======
-import {PostAppointmentComponent} from "./components/post-appointment/post-appointment.component";
->>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -63,10 +55,6 @@ const routes: Routes = [
   {path: 'managuser', component: UsermanagementComponent, canActivate : [UsermanagementguardGuard ]  },
   {path: 'managad', component: AdManagAdminComponent},
   {path: 'managclaim', component: ClaimsmanagementComponent},
-  {path: 'managappointment', component: AppointmentmangemtComponent},
-  {path: 'myappointment', component: MyappointmentsComponent},
-  {path: 'managemyappointment', component: ManagMyAppointmentComponent},
-  {path: 'PostAPP/:id', component: PostAppointmentComponent},
   {path: 'sordmanag', component: SubscriptionOrderManagementComponent},
   {path: 'offers', component: OffersComponent},
   {path: 'checkout', component: CheckoutComponent},
