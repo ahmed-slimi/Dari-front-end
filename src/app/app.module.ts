@@ -1,6 +1,11 @@
+import { MbscModule } from '@mobiscroll/angular';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< Updated upstream
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+=======
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+>>>>>>> Stashed changes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,7 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserComponent } from './components/user/user.component';
 import { RegisterComponent } from './components/register/register.component';
 
-import { FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import { SubscriptionComponent } from './components/subscription/subscription.component';
 import {MaterialModule} from './material/material.module';
@@ -35,6 +40,11 @@ import {LoginComponent} from './components/login/login.component';
 // @ts-ignore
 import {SuccessComponent} from './components/success/success.component';
 import {CancelComponent} from './components/cancel/cancel.component';
+import { AppointmentmangemtComponent } from './components/appointmentmangemt/appointmentmangemt.component';
+import { AppointmentupdateComponent } from './components/appointmentupdate/appointmentupdate.component';
+import { MyappointmentsComponent } from './components/myappointments/myappointments.component';
+import { ManagMyAppointmentComponent } from './components/manag-my-appointment/manag-my-appointment.component';
+
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import {ChartsModule} from 'ng2-charts';
 import { RessetpasswordComponent } from './components/ressetpassword/ressetpassword.component';
@@ -52,6 +62,7 @@ import { AdadvancSearchAdminComponent } from './components/adadvanc-search-admin
 import { SituationAdComponent } from './components/situation-ad/situation-ad.component';
 import { AssuranceComponent } from './components/assurance/assurance.component';
 import { SurveillanceDeMaisonComponent } from './components/surveillance-de-maison/surveillance-de-maison.component';
+<<<<<<< Updated upstream
 import { FounitureAdDetailsComponent } from './components/founiture-ad-details/founiture-ad-details.component';
 import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
@@ -66,6 +77,14 @@ import { CustomSnackBarComponent } from './components/custom-snack-bar/custom-sn
 import { AdKeySearchComponent } from './components/ad-key-search/ad-key-search.component';
 import { NotifAdminComponent } from './components/notif-admin/notif-admin.component';
 
+=======
+import { PostAppointmentComponent } from './components/post-appointment/post-appointment.component';
+import { AppointmentDetailComponent } from './components/appointment-detail/appointment-detail.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import {FullCalendarModule} from '@fullcalendar/angular';
+import {DxButtonModule, DxCheckBoxModule, DxMapModule, DxSchedulerModule} from "devextreme-angular";
+import { ToastrModule } from 'ngx-toastr';
+>>>>>>> Stashed changes
 
 import { FournitureAdCheckoutComponent } from './components/fourniture-ad-checkout/fourniture-ad-checkout.component';
 
@@ -97,6 +116,10 @@ import { FournitureAdCheckoutComponent } from './components/fourniture-ad-checko
     CancelComponent,
     SuccessComponent,
     HeaderComponent,
+    AppointmentmangemtComponent,
+    AppointmentupdateComponent,
+    MyappointmentsComponent,
+    ManagMyAppointmentComponent,
 
       OffersComponent,
         StatisticsComponent,
@@ -113,6 +136,7 @@ import { FournitureAdCheckoutComponent } from './components/fourniture-ad-checko
         SituationAdComponent,
         AssuranceComponent,
         SurveillanceDeMaisonComponent,
+<<<<<<< Updated upstream
         FounitureAdDetailsComponent,
         AddFournitureAdComponent,
         FournitureAdOwnedComponent,
@@ -122,12 +146,21 @@ import { FournitureAdCheckoutComponent } from './components/fourniture-ad-checko
         AdKeySearchComponent,
         NotifAdminComponent,
         FournitureAdCheckoutComponent
+=======
+        PostAppointmentComponent,
+        AppointmentDetailComponent,
+        CalendarComponent,
+>>>>>>> Stashed changes
        ],
 
 
   imports: [
+<<<<<<< Updated upstream
     MatListModule, NgxPaginationModule,
     MatChipsModule,
+=======
+    MbscModule,
+>>>>>>> Stashed changes
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -135,11 +168,27 @@ import { FournitureAdCheckoutComponent } from './components/fourniture-ad-checko
     FormsModule,
     MaterialModule,
     ChartsModule,
+<<<<<<< Updated upstream
     GalleryModule,
     LightboxModule,
     NgImageSliderModule,
+=======
+    ReactiveFormsModule,
+    FullCalendarModule,
+    DxSchedulerModule,
+    DxMapModule,
+    DxCheckBoxModule,
+    DxButtonModule,
+    ToastrModule.forRoot()
+
+
+
+    //   NbThemeModule.forRoot({name: 'default'}),
+    // NbThemeModule.forRoot({ name: 'default' })
+>>>>>>> Stashed changes
   ],
   providers: [httpInterceptorProviders, VerifAuthService, WebsocketService, AdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+platformBrowserDynamic().bootstrapModule(AppModule)

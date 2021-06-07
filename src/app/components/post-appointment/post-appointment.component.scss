@@ -1,0 +1,29 @@
+*{margin: 0;
+  box-sizing: border-box;}
+.img{font-family: 'Roboto', sans-serif !important;background-size: cover;background-image:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)), url("../../../../src/assets/img/ah3.jpg")}
+.img p {color:#c6c8ca;text-align: center;padding-top: 50px;font-weight: 500;font-size: 30px}
+section{ }
+.flex{display: flex;align-items: center;
+  justify-content: center;padding-top: 10px}
+.textarea{padding-top: 20px}
+.btn{color: #c6c8ca;font-weight: 500;
+  display: inline-block;  /*by using inline block we can use sme padding margin*/
+  padding: 10px 40px;text-decoration: none; /*text-decoration hide the line of a*/z-index: 999999;
+  border-radius: 200px;border:2px solid #c23616;margin-top: 20px;transition: background-color 0.5s,border 0.2s, color 0.2s/* color change slowly by transition*/
+}
+p {
+  font-family: Lato;
+}
+::ng-deep .options {
+  padding: 20px;
+  background-color: rgba(191, 191, 191, 0.15);
+  margin-top: 20px;
+}
+::ng-deep .caption {
+  font-size: 18px;
+  font-weight: 500;
+}
+::ng-deep .option {
+  margin-top: 10px;
+}
+

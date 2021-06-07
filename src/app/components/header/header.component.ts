@@ -40,7 +40,12 @@ export class HeaderComponent implements OnInit {keys=[]; symbol=Typead;cities:st
 
 
   // tslint:disable-next-line:typedef
+<<<<<<< Updated upstream
   SigninRouting() {
+=======
+
+  SigninRouting(){
+>>>>>>> Stashed changes
     this.router.navigate(['signin']);
   }
   authority: string;
