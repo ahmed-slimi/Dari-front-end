@@ -43,7 +43,13 @@
       <p class="card-text"><small class="text-muted">{{Ad.creationDate}}</small></p>
 
     </div>
-    <div class="coulleur"> NEW</div>
+    <div class="coulleur"> NEW</div><br>
+
+    <div class="container" *ngIf="info.token || verifauth.verif==true ;">
+
+      <button (click)="selectAd(Ad.adId)" class="btn btn-outline-success btn-lg btn-block" >&nbsp;Post Appointment&nbsp;</button>
+    </div>
+    <br>
   </div></div>
   <!--
 

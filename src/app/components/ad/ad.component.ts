@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< Updated upstream
 import {ActivatedRoute} from '@angular/router';
 import { Ad } from 'src/app/models/Ad';
 import {AdService} from '../../services/ad.service';
@@ -11,6 +12,17 @@ import {imguser} from "../../models/imguser";
 import {TokenStorageService} from "../../auth/token-storage.service";
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user";
+=======
+import {ActivatedRoute, Router} from "@angular/router";
+import { Ad } from 'src/app/models/Ad';
+import {AdService} from "../../services/ad.service";
+import {FilesAd} from "../../models/FilesAd";
+import {VerifAuthService} from "../../services/verif-auth.service";
+import {TokenStorageService} from "../../auth/token-storage.service";
+import {any} from "codelyzer/util/function";
+import {ServiceService} from "../../services/service.service";
+import {AppointmentService} from "../../services/appointment.service";
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-product',
@@ -23,6 +35,7 @@ export class AdComponent implements OnInit {
   retrieveResonse: FilesAd[];  u: User;
 
   base64Data: any[] = [];
+<<<<<<< Updated upstream
   retrievedImage: any[] = [];public Img:any[]=[];        video :any[]=[]
   private retrieveResonsevideo: FilesAd[];
   private base64DataVideo: any[] = [];
@@ -32,7 +45,17 @@ export class AdComponent implements OnInit {
 
   constructor(private activ: ActivatedRoute,private AdServ: AdService, private dialog: MatDialog,private clm:ClaimserviceService,private us: UserService, private token: TokenStorageService) { }
 
+=======
+  retrievedImage: any[] = [];public Img:any[]=[]
+  constructor(private activ:ActivatedRoute,private AdServ: AdService,public verifauth: VerifAuthService, private router: Router, private token: TokenStorageService , private service: ServiceService, private  appser: AppointmentService) { }
+  info: any;
+>>>>>>> Stashed changes
   ngOnInit(): void {
+    this.appser.GetAdUser(this.activ.snapshot.params['id']);
+    this.service.apps = [];
+    this.service.GetAppByLandlordAd( this.activ.snapshot.params['id']);
+    this.service.getallLocation();
+    this.service.getMarkers1(this.activ.snapshot.params['id']);
     console.log(this.activ.snapshot.params['id']);
     this.AdServ.getAdById(this.activ.snapshot.params['id']).subscribe(data=> {//console.log(data);
       this.Ad=data as Ad;
@@ -74,6 +97,7 @@ export class AdComponent implements OnInit {
       }
       );
 
+<<<<<<< Updated upstream
         this.retrieveResonseuser = this.Ad.us.imguser as imguser[];console.log(this.retrieveResonseuser);
         for(let t of this.retrieveResonseuser)
         {this.retrievedImageuser.push('data:image/jpeg;base64,' + t.picByte);console.log(this.retrievedImageuser);
@@ -92,3 +116,19 @@ export class AdComponent implements OnInit {
     dialogConfig.width = '30%';
     this.dialog.open(ClaimsupdateComponent, dialogConfig);
   }}
+=======
+    });
+
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
+  }
+  selectAd(id: number){
+    this.router.navigate(['/PostAPP', id]);
+  }
+}
+
+
+>>>>>>> Stashed changes

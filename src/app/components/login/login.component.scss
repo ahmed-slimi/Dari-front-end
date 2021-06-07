@@ -1,3 +1,4 @@
+/*
 .mat-grid-list{
   background-color: transparent;
   background-image: url("../../../../src/assets/img/h.jpg") ;
@@ -12,7 +13,7 @@
 }
 .b{
   margin-left: 70px;
- justify-content: center;
+  justify-content: center;
   text-decoration-color: #424242;
   width: 120px;
   font-size: 20px;
@@ -23,17 +24,17 @@
   border-color: #FFFFFF;
 }
 ::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
+  /!*change color of label*!/
   color: #455331 !important;
 }
 
 ::ng-deep.mat-form-field-underline {
-  /*change color of underline*/
+  /!*change color of underline*!/
   background-color: #455331 !important;
 }
 
 ::ng-deep.mat-form-field-ripple {
-  /*change color of underline when focused*/
+  /!*change color of underline when focused*!/
   background-color: #455331 !important;;
 }
 .mat{
@@ -44,4 +45,5 @@
   margin-left: 70px;
   width: 120px;
 }
+*/
 
